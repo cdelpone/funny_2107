@@ -5,53 +5,38 @@ RSpec.describe Joke do
     joke = Joke.new(22, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
 
     expect(joke).to be_a Joke
+    expect(joke.id).to eq(22)
+    expect(joke.setup).to eq("Why did the strawberry cross the road?")
+    expect(joke.punchline).to eq("Because his mother was in a jam.")
   end
+end
 
-#
-# joke.id
-# # => 22
-#
-# joke.setup
-# # => "Why did the strawberry cross the road?"
-#
-# joke.punchline
-#
-# #Iteration 2
-# user_1 = User.new("Sal")
-# # => #<User:0x00007fb71e1eb8d8...>
-#
-# user_1.name
-# # => "Sal"
-#
-# user_1.jokes
-# # => []
-#
-# joke_1 = Joke.new(22, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
-# # => #<Joke:0x00007fb71da169f0...>
-#
-# joke_2 = Joke.new(13, "How do you keep a lion from charging?", "Take away its credit cards.")
-# # => #<Joke:0x00007fb71d8e0bd0...>
-#
-# user_1.learn(joke_1)
-#
-# user_1.learn(joke_2)
-#
-# user_1.jokes
-# # => [#<Joke:0x00007fb71da169f0...>, #<Joke:0x00007fb71d8e0bd0...>]
-#
+
+
+  #Iteration 2
+  # user_1 = User.new("Sal")
+  # # => Sal
+  # expect(user_1.name).to eq("Sal")
+  # expect(user_1.jokes).to eq([])
+  # joke_1 = Joke.new(22, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
+  # joke_2 = Joke.new(13, "How do you keep a lion from charging?", "Take away its credit cards.")
+  # user_1.learn(joke_1)
+  # user_1.learn(joke_2)
+  # expect(user_1.jokes).to eq([joke_1, joke_2])
+
 #
 # #Iteration 3
 # user_1 = User.new("Sal")
-# # => #<User:0x00007fb71e1eb8d8...>
+# # => user_1
 #
 # user_2 = User.new("Ali")
-# # => #<User:0x00007fb71e1a4348...>
+# # => user_2
 #
 # joke_1 = Joke.new(22, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
-# # => #<Joke:0x00007fb71da169f0...>
+# # => joke_1
 #
 # joke_2 = Joke.new(13, "How do you keep a lion from charging?", "Take away its credit cards.")
-# # => #<Joke:0x00007fb71d8e0bd0...>
+# # => joke_2
 #
 # user_1.learn(joke_1)
 #
@@ -62,13 +47,13 @@ RSpec.describe Joke do
 # user_1.tell(user_2, joke_2)
 #
 # user_2.jokes
-# # => [#<Joke:0x00007fb71da169f0...>, #<Joke:0x00007fb71d8e0bd0...>]
+# # => [joke_1, joke_2]
 #
 # user_2.joke_by_id(22)
-# # => #<Joke:0x00007fb71da169f0...>
+# # => joke_1
 #
 # user_2.joke_by_id(13)
-# # => #<Joke:0x00007fb71d8e0bd0...>
+# # => joke_2
 #
 # # Iteration 4
 # open_mic = OpenMic.new({location: "Comedy Works", date: "11-20-18"})
